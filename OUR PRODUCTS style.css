@@ -1,0 +1,446 @@
+html {
+  height: 100vh;
+  overflow: hidden;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  margin: 0;
+  padding: 0;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/**scroll bar**/
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgb(240, 181, 199);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgb(196, 97, 138);
+}
+
+/**nav bar **/
+header {
+  position: absolute;
+  background-color: #77000000;
+  z-index: 4;
+  width: 98%;
+}
+
+/**navigation**/
+nav {
+  background-color: white;
+  border-radius: 15vh;
+  width: 70%;
+  height: 10vh;
+  margin-left: 15%;
+  margin-top: 3vh;
+}
+
+#FlexBoxNavigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.FlexBoxNavigationButton {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(137, 43, 226, 0);
+  width: 13%;
+  height: 7vh;
+  margin-top: 1.5vh;
+}
+
+.FlexBoxNavigationButton > a > button {
+  height: 100%;
+  width: 15vh;
+  border: none;
+  border-radius: 4vh;
+  background-color: rgb(240, 181, 199);
+  color: white;
+  font-size: 15pt;
+  font-weight: 300;
+  cursor: pointer;
+}
+.FlexBoxNavigationButton > a > button:hover {
+  border-bottom-style: solid;
+  border: solid rgb(72, 40, 107);
+}
+
+.headerUnderline {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  color: #a0a0a000;
+}
+.headerUnderline:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(72, 40, 107);
+  height: 3px;
+  width: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.headerUnderline:hover:after {
+  width: 100%;
+}
+
+/**parallax**/
+.parallax1 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/gradienta--gmycsIe7FU-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 100vh;
+}
+
+#shopname {
+  height: 30vh;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(240, 181, 199, 0.644);
+  color: whitesmoke;
+  font-size: 150pt;
+  font-family: "Lobster", cursive;
+
+  margin-top: 10vh;
+}
+
+.parallax2 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-image: url(img/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 110vh;
+}
+
+/**hover cards**/
+
+.shoppingbox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5vh;
+  justify-content: space-around;
+}
+.card {
+  width: 40vh;
+  height: 60vh;
+  padding: 2rem 1rem;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 10px 10px 10px rgba(72, 40, 107, 0.561);
+  transition: 0.5s ease-in-out;
+  border-radius: 5vh;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(20px);
+  z-index: 0;
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(72, 40, 107), rgb(240, 181, 199));
+  z-index: 2;
+  transform: 0.5s all;
+  opacity: 0;
+  border-radius: 5vh;
+}
+.card:hover:before {
+  opacity: 0.8;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5vh;
+}
+.card .info {
+  font-size: 20pt;
+  position: relative;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transform: translateY(30px);
+  transform: 0.5s all;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.BuyButtonText {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  text-decoration: none;
+  color: white;
+  font-size: 20pt;
+}
+
+.BuyButton {
+  width: 15vh;
+  height: 8vh;
+  background-color: rgb(72, 40, 107);
+  border-radius: 0.5vh;
+  border-style: solid;
+  text-align: center;
+}
+.BuyButton:hover {
+  background-color: rgba(240, 181, 199, 0.9);
+  border-color: rgb(72, 40, 107);
+  border-width: 0.5vh;
+}
+
+.BuyButton > a:hover {
+  color: rgb(72, 40, 107);
+}
+
+.loginO {
+  width: 15%;
+  border-radius: 5vh;
+  margin-left: 42.5%;
+  background-color: white;
+  transform: translate(0.1vh, 2vh);
+  display: flex;
+  justify-content: center;
+}
+.login {
+  width: 100%;
+  background: none;
+  padding-left: 7vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+
+  font-size: 25pt;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5vh;
+}
+.login1 {
+  color: rgb(240, 181, 199);
+}
+.login1:hover {
+  color: white;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(196, 97, 138, 0.908);
+  z-index: -1;
+  transition: 0.4s;
+}
+.login1::before {
+  bottom: 0;
+  border-radius: 5vh;
+}
+
+.login1:hover::before {
+  height: 100%;
+}
+
+.parallax3 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/nabajyoti-ray-0gZy38p9XJE-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 110vh;
+}
+
+.cardbox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5vh;
+  justify-content: space-around;
+}
+
+.cards {
+  width: 40vh;
+  height: 60vh;
+  padding: 2rem 1rem;
+  margin-top: 20vh;
+  display: inline-block;
+
+  transform-style: preserve-3d;
+}
+.cards .frontface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5vh;
+
+  align-items: center;
+  backface-visibility: hidden;
+  transition: 2s ease-in-out;
+  transform: perspective(100vh) rotateY(0deg);
+}
+
+.cards .frontface.front {
+  background: rgb(240, 181, 199);
+}
+.cards:hover .frontface.front {
+  transform: perspective(100vh) rotateY(180deg);
+}
+.cards .frontface.backside {
+  background: rgb(72, 40, 107);
+  color: #fff;
+  transform: perspective(100vh) rotateY(180deg);
+}
+.cards:hover .frontface.backside {
+  transform: perspective(500px) rotateY(360deg);
+}
+.cards .frontface {
+  transform: perspective(500px) translatez(20px);
+}
+.cards .frontface {
+  transform: perspective(500px) translatez(20px);
+}
+.cards .frontface .BUYparfume {
+  transform: perspective(500px) translatez(20px);
+}
+.textturn {
+  text-align: center;
+  font-size: 25pt;
+  color: white;
+}
+
+.BUYparfume {
+  margin-left: 15vh;
+  text-align: center;
+
+  background-color: gold;
+  cursor: pointer;
+  color: rgb(72, 40, 107);
+  font-size: 25pt;
+  width: 13vh;
+  height: 7vh;
+  border-radius: 2vh;
+}
+.photos {
+  width: 100%;
+  height: 45vh;
+  border-top-left-radius: 5vh;
+  border-top-right-radius: 5vh;
+}
+
+.parallax4 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/diego-ph-VmRxRz0gD_s-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 100vh;
+}
+
+.map {
+  display: inline-block;
+  margin-left: 25%;
+  margin-top: 5%;
+  width: 50%;
+  height: 65%;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1vh;
+  border-radius: 5vh;
+}
+.map:hover {
+  display: inline-block;
+
+  border-style: solid;
+  border-color: rgba(0, 0, 255, 0);
+}
+
+footer {
+  background-image: url(/img/meiying-ng-OrwkD-iWgqg-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul {
+  display: inline-block;
+}
+.links {
+  color: white;
+  font-size: 25px;
+  list-style: none;
+  cursor: pointer;
+}
+.links:hover {
+  color: rebeccapurple;
+}
+.linksOO {
+  margin-top: 5vh;
+}
+
+ul > a {
+  text-decoration: none;
+}
+
+ul > a > li {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.footerimg {
+  width: 4vh;
+  height: 4vh;
+}

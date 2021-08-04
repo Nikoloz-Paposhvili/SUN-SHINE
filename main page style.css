@@ -1,0 +1,653 @@
+html {
+  overflow: hidden;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  margin: 0;
+  padding: 0;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+/**scroll bar**/
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgb(240, 181, 199);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgb(196, 97, 138);
+}
+
+/**parallax**/
+.parallax1 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/gradienta--gmycsIe7FU-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 100vh;
+}
+
+/**nav bar **/
+header {
+  position: absolute;
+  background-color: #77000000;
+  z-index: 4;
+  width: 98%;
+}
+
+/**navigation**/
+nav {
+  background-color: white;
+  border-radius: 15vh;
+  width: 90%;
+  height: 10vh;
+  margin-left: 5%;
+  margin-top: 3vh;
+}
+
+#FlexBoxNavigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.FlexBoxNavigationButton {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(137, 43, 226, 0);
+  width: 13%;
+  height: 7vh;
+  margin-top: 1.5vh;
+}
+
+.FlexBoxNavigationButton > a > button {
+  height: 100%;
+  width: 15vh;
+  border: none;
+  border-radius: 4vh;
+  background-color: rgb(240, 181, 199);
+  color: white;
+  font-size: 15pt;
+  font-weight: 300;
+  cursor: pointer;
+}
+.FlexBoxNavigationButton > a > button:hover {
+  border-bottom-style: solid;
+  border: solid rgb(72, 40, 107);
+}
+
+.headerUnderline {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  color: #a0a0a000;
+}
+.headerUnderline:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(72, 40, 107);
+  height: 3px;
+  width: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.headerUnderline:hover:after {
+  width: 100%;
+}
+
+#shopname {
+  height: 30vh;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(240, 181, 199, 0.644);
+  color: whitesmoke;
+  font-size: 150pt;
+  font-family: "Lobster", cursive;
+
+  margin-top: 10vh;
+}
+
+.parallax2 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/meiying-ng-OrwkD-iWgqg-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 130vh;
+}
+
+.shopQuote {
+  text-align: center;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 100pt;
+  color: whitesmoke;
+  background-color: rgba(240, 181, 199, 0.644);
+  margin-top: 40vh;
+  margin-left: 5%;
+  width: 90%;
+}
+
+.parallax3 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/gradienta--gmycsIe7FU-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 150vh;
+}
+
+/**carousel **/
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 60%;
+  position: relative;
+  padding-top: 1vh;
+  margin-left: 20%;
+}
+.slideshow-container:hover {
+  background-color: rgba(24, 28, 40, 0.314);
+  border-radius: 5vh;
+}
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f200;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  bottom: 0vh;
+  height: 75vh;
+  width: 46%;
+  margin-left: 27%;
+  bottom: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.CarouselButtons {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  color: #a0a0a000;
+}
+
+.CarouselButtons:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(72, 40, 107);
+  height: 3px;
+  width: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.CarouselButtons:hover:after {
+  width: 100%;
+}
+
+.BUYandMOREbuttons > a > button {
+  height: 7vh;
+  width: 15vh;
+  border-radius: 15vh;
+  border-style: solid;
+
+  cursor: pointer;
+  margin-top: 65vh;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  color: rgb(255, 255, 255);
+  background-color: rgb(240, 181, 199);
+}
+.BUYandMOREbuttons > a > button:hover {
+  height: 7vh;
+  width: 15vh;
+  margin-top: 65vh;
+  border-radius: 15vh;
+  border-style: solid;
+  border-color: rgb(72, 40, 107);
+  border-width: 4px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(24, 28, 40, 0.5);
+  z-index: 2;
+}
+
+#FORmoreFollow {
+  width: 20%;
+  margin-left: 40%;
+  margin-bottom: 2vh;
+  margin-top: 0;
+  text-align: center;
+  font-size: 20pt;
+  color: white;
+  background-color: rgba(240, 181, 199, 0.644);
+}
+
+.socialmediaBOX {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0);
+  height: 13vh;
+}
+
+.socialmediaBOX > div {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.socialmediaBOX > div > a > button {
+  background-color: rgba(245, 245, 220, 0);
+  cursor: pointer;
+  border: none;
+}
+
+.parallax4 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/diego-ph-VmRxRz0gD_s-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 150vh;
+}
+
+.parallax5 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-image: url(img/liana-mikah-4RTAF3Z-0zM-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 150vh;
+}
+
+/**hover cards**/
+
+.shoppingbox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5vh;
+  justify-content: space-around;
+}
+.card {
+  width: 40vh;
+  height: 60vh;
+  padding: 2rem 1rem;
+  background: black;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 10px 10px 10px rgba(72, 40, 107, 0.561);
+  transition: 0.5s ease-in-out;
+  border-radius: 5vh;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(20px);
+  z-index: 0;
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(72, 40, 107), rgb(240, 181, 199));
+  z-index: 2;
+  transform: 0.5s all;
+  opacity: 0;
+  border-radius: 5vh;
+}
+.card:hover:before {
+  opacity: 0.8;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5vh;
+}
+.card .info {
+  font-size: 20pt;
+  position: relative;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transform: translateY(30px);
+  transform: 0.5s all;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.BuyButtonText {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  text-decoration: none;
+  color: white;
+  font-size: 20pt;
+}
+
+.BuyButton {
+  width: 15vh;
+  height: 8vh;
+  background-color: rgb(72, 40, 107);
+  border-radius: 0.5vh;
+  border-style: solid;
+  text-align: center;
+}
+.BuyButton:hover {
+  background-color: rgba(240, 181, 199, 0.9);
+  border-color: rgb(72, 40, 107);
+  border-width: 0.5vh;
+}
+
+.BuyButton > a:hover {
+  color: rgb(72, 40, 107);
+}
+
+.parallax6 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/diego-ph-BCuxVP5WEsU-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 150vh;
+}
+.parallax7 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/eskay-lim-vD16hP6HHu0-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 110vh;
+}
+.parallax8 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/ben-maguire-FTYgqLeseI4-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 150vh;
+}
+
+.parallax9 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(img/wesley-tingey-mvLyHPRGLCs-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 110vh;
+}
+.map {
+  display: inline-block;
+  margin: 5%;
+  width: 40%;
+  height: 60%;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1vh;
+  border-radius: 5vh;
+}
+.map:hover {
+  display: inline-block;
+  margin: 5%;
+  width: 40%;
+  height: 60%;
+  border-style: solid;
+  border-color: blue;
+  border-width: 0;
+}
+
+#ForDelivery {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  flex-wrap: wrap;
+  width: 35%;
+  height: 65vh;
+  margin-left: 60%;
+  bottom: 70%;
+  position: relative;
+  text-align: center;
+  background-color: rgba(240, 181, 199, 0.9);
+  border-radius: 5vh;
+}
+
+#ForDelivery > p {
+  font-size: 24pt;
+  color: white;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  font-size: 15pt;
+  margin: 4%;
+  width: 80%;
+  height: 5vh;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5vh;
+  border-width: 1vh;
+  background-color: rgba(0, 0, 255, 0);
+  color: white;
+  outline: none;
+}
+input:hover {
+  text-align: center;
+  font-size: 15pt;
+  margin: 4%;
+  width: 80%;
+  height: 5vh;
+  border-style: solid;
+  border-color: rgb(72, 40, 107);
+  border-radius: 5vh;
+  border-width: 0.1vh;
+  background-color: rgba(0, 0, 255, 0);
+  color: white;
+  outline: none;
+}
+
+#ForDelivery > form > div > button {
+  width: 17vh;
+  height: 7vh;
+  border-radius: 5vh;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 15pt;
+}
+
+#ForDelivery > form > div > button:hover {
+  width: 17vh;
+  height: 7vh;
+  color: rgba(24, 28, 40, 0.314);
+  font-size: 15pt;
+  cursor: pointer;
+  border-radius: 5vh;
+  border-color: rgb(72, 40, 107);
+  border-width: 1vh;
+}
+
+footer {
+  background-image: url(/img/meiying-ng-OrwkD-iWgqg-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul {
+  display: inline-block;
+}
+.links {
+  color: white;
+  font-size: 25px;
+  list-style: none;
+  cursor: pointer;
+}
+.links:hover {
+  color: rebeccapurple;
+}
+.linksOO {
+  margin-top: 5vh;
+}
+
+ul > a {
+  text-decoration: none;
+}
+
+ul > a > li {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.footerimg {
+  width: 4vh;
+  height: 4vh;
+}

@@ -1,0 +1,251 @@
+html {
+  height: 100vh;
+  overflow: hidden;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  margin: 0;
+  padding: 0;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/**scroll bar**/
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgb(240, 181, 199);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgb(196, 97, 138);
+}
+
+/**nav bar **/
+header {
+  position: absolute;
+  background-color: #77000000;
+  z-index: 4;
+  width: 98%;
+}
+
+/**navigation**/
+nav {
+  background-color: white;
+  border-radius: 15vh;
+  width: 20%;
+  height: 10vh;
+  margin-left: 5%;
+  margin-top: 3vh;
+}
+
+#FlexBoxNavigation {
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.FlexBoxNavigationButton {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(137, 43, 226, 0);
+  width: 13%;
+  height: 7vh;
+  margin-top: 1.5vh;
+}
+
+.FlexBoxNavigationButton > a > button {
+  height: 100%;
+  width: 15vh;
+  border: none;
+  border-radius: 4vh;
+  background-color: rgb(240, 181, 199);
+  color: white;
+  font-size: 15pt;
+  font-weight: 300;
+  cursor: pointer;
+}
+.FlexBoxNavigationButton > a > button:hover {
+  border-bottom-style: solid;
+  border: solid rgb(72, 40, 107);
+}
+
+.headerUnderline {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  color: #a0a0a000;
+  left: 1vh;
+}
+.headerUnderline:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(72, 40, 107);
+  height: 3px;
+  width: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.headerUnderline:hover:after {
+  width: 80%;
+  left: 1vh;
+}
+
+.parallax2 {
+  /* The image used */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-image: url(img/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg);
+  margin: 0;
+  padding: 0;
+  /* Full height */
+  height: 385vh;
+}
+
+/**hover cards**/
+
+.shoppingbox {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5vh;
+  justify-content: space-around;
+}
+.card {
+  width: 40vh;
+  height: 60vh;
+  padding: 2rem 1rem;
+  background: black;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 10px 10px 10px rgba(72, 40, 107, 0.561);
+  transition: 0.5s ease-in-out;
+  border-radius: 5vh;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(20px);
+  z-index: 0;
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(72, 40, 107), rgb(240, 181, 199));
+  z-index: 2;
+  transform: 0.5s all;
+  opacity: 0;
+  border-radius: 5vh;
+}
+.card:hover:before {
+  opacity: 0.8;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5vh;
+}
+.card .info {
+  font-size: 20pt;
+  position: relative;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transform: translateY(30px);
+  transform: 0.5s all;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.BuyButtonText {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  text-decoration: none;
+  color: white;
+  font-size: 20pt;
+}
+
+.BuyButton {
+  width: 15vh;
+  height: 8vh;
+  background-color: rgb(72, 40, 107);
+  border-radius: 0.5vh;
+  border-style: solid;
+  text-align: center;
+}
+.BuyButton:hover {
+  background-color: rgba(240, 181, 199, 0.9);
+  border-color: rgb(72, 40, 107);
+  border-width: 0.5vh;
+}
+
+.BuyButton > a:hover {
+  color: rgb(72, 40, 107);
+}
+
+footer {
+  background-image: url(/img/meiying-ng-OrwkD-iWgqg-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul {
+  display: inline-block;
+}
+.links {
+  color: white;
+  font-size: 25px;
+  list-style: none;
+  cursor: pointer;
+}
+.links:hover {
+  color: rebeccapurple;
+}
+.linksOO {
+  margin-top: 5vh;
+}
+
+ul > a {
+  text-decoration: none;
+}
+
+ul > a > li {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.footerimg {
+  width: 4vh;
+  height: 4vh;
+}
